@@ -5,14 +5,9 @@ import Link from "next/link";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
-	DropdownMenuGroup,
 	DropdownMenuItem,
 	DropdownMenuLabel,
-	DropdownMenuPortal,
 	DropdownMenuSeparator,
-	DropdownMenuSub,
-	DropdownMenuSubContent,
-	DropdownMenuSubTrigger,
 	DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 
@@ -28,7 +23,6 @@ import {
 	Bookmark,
 	StickyNote
 } from "lucide-react"
-
 
 export default function HeaderDropdown() {
     const [triggerStatus, setTriggerStatus] = useState({ asChild: true });
@@ -69,15 +63,15 @@ export default function HeaderDropdown() {
 						Direkt Mesajlarım
 					</DropdownMenuItem></Link>
 				<DropdownMenuSeparator />
-					<Link href="/myprofile"><DropdownMenuItem className="cursor-pointer">
+					<Link href="/homeworks"><DropdownMenuItem className="cursor-pointer">
 						<BookMarked className="mr-2 h-4 w-4" />
 						Ödevlerim
 					</DropdownMenuItem></Link>
-					<Link href="/myarea"><DropdownMenuItem className="cursor-pointer">
+					<Link href="/saves"><DropdownMenuItem className="cursor-pointer">
 						<Bookmark className="mr-2 h-4 w-4" />
 						Kaydedilenlerim
 					</DropdownMenuItem></Link>
-                    <Link href="/messages"><DropdownMenuItem className="cursor-pointer">
+                    <Link href="/notes"><DropdownMenuItem className="cursor-pointer">
 						<StickyNote className="mr-2 h-4 w-4" />
 						Notlarım
 					</DropdownMenuItem></Link>
@@ -103,19 +97,3 @@ export default function HeaderDropdown() {
 		</DropdownMenu>
 	);
 };
-
-/*
-*   <DropdownMenuSub>
-*   	<DropdownMenuSubTrigger>
-*   		Invite users
-*   	</DropdownMenuSubTrigger>
-*   	<DropdownMenuPortal>
-*   		<DropdownMenuSubContent>
-*   			<DropdownMenuItem className="cursor-pointer">Email</DropdownMenuItem>
-*   			<DropdownMenuItem className="cursor-pointer">Message</DropdownMenuItem>
-*   			<DropdownMenuSeparator />
-*   			<DropdownMenuItem className="cursor-pointer">More...</DropdownMenuItem>
-*   		</DropdownMenuSubContent>
-*   	</DropdownMenuPortal>
-*   </DropdownMenuSub>
-*/
