@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en-US" className="min-h-screen light">
-            <body className={`${inter.className} text-gray-800 dark:text-gray-200 antialiased bg-neutral-50 dark:bg-black w-screen min-h-screen overflow-x-hidden`}>
+            <body className={`${inter.className} text-gray-800 dark:text-gray-200 antialiased bg-white dark:bg-black w-screen min-h-screen overflow-x-hidden`}>
                 <GlobalContextProvider>
                     <Header />
                     { children }
