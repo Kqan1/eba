@@ -14,7 +14,7 @@ declare module 'next-auth' {
             createdAt: Date;
             updatedAt: Date;
         };
-    }
+    };
     interface User extends DefaultUser {
         username: string;
         emailVerified: Date | null;
@@ -26,7 +26,7 @@ declare module 'next-auth' {
         role: string;
         createdAt: Date;
         updatedAt: Date;
-    }
+    };
 };
 declare module "next-auth/jwt" {
     interface JWT {
@@ -40,5 +40,5 @@ declare module "next-auth/jwt" {
         role: string;
         createdAt: Date;
         updatedAt: Date;
-    }
+    };
 };

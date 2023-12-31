@@ -1,7 +1,5 @@
-// @ts-nocheck
 import type { Config } from 'tailwindcss'
 import defaultTheme from "tailwindcss/defaultTheme"
-import { nextui } from "@nextui-org/react";
 
 const config: Config = {
     darkMode: ["class"],
@@ -9,7 +7,6 @@ const config: Config = {
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
         './app/**/*.{js,ts,jsx,tsx,mdx}',
-        "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
         container: {
@@ -22,12 +19,12 @@ const config: Config = {
         extend: {
             keyframes: {
                 "accordion-down": {
-                    from: { height: 0 },
+                    from: { height: "0" },
                     to: { height: "var(--radix-accordion-content-height)" },
                 },
                 "accordion-up": {
                     from: { height: "var(--radix-accordion-content-height)" },
-                    to: { height: 0 },
+                    to: { height: "0" },
                 },
             },
             animation: {
@@ -47,6 +44,6 @@ const config: Config = {
             }
         },
     },
-    plugins: [require("tailwindcss-animate"), nextui()],
+    plugins: [require("tailwindcss-animate")],
 }
 export default config;

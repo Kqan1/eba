@@ -2,7 +2,7 @@
 import React, { createContext, useContext } from "react";
 import { ThemeProvider } from "next-themes";
 import { SessionProvider } from "next-auth/react";
-import { NextUIProvider } from "@nextui-org/react";
+// import { NextUIProvider } from "@nextui-org/react";
 
 type DataType = {
 };

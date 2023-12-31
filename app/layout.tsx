@@ -3,10 +3,9 @@ import "./globals.css";
 import { GlobalContextProvider } from "@/app/context/store";
 import { inter } from "@/utils/fonts"
 
-
-import DevTools from "@/components/devTools";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
+import { cn } from "@/lib/shadcn";
 
 export const metadata: Metadata = {
     title: "EBA - Eğitim Bilişim Ağı",
@@ -28,13 +27,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en-US" className="min-h-screen light">
-            <body className={`${inter.className} text-gray-800 dark:text-gray-200 antialiased bg-white dark:bg-black w-screen min-h-screen overflow-x-hidden`}>
+        <html lang="tr-TR" className="h-full light">
+            <body className={cn(inter.className, "relative text-gray-800 dark:text-gray-200 antialiased bg-white dark:bg-black h-full overflow-x-hidden")}>
                 <GlobalContextProvider>
-                    <Header />
-                    { children }
-                    <Footer />
-                    <DevTools />
+                    <main className="relative flex flex-col min-h-screen h-full">
+                        <Header />
+                        <div className="relative flex-grow flex-1">
+                            {children}
+                        </div>
+                        <Footer />
+                    </main>
                 </GlobalContextProvider>
             </body>
         </html>

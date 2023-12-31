@@ -7,31 +7,31 @@ import CredentialsProvider from "next-auth/providers/credentials";
 export const authOptions: NextAuthOptions = {
     adapter: PrismaAdapter(db),
     pages: {
-        // signIn: "/login",
+        signIn: "/login",
     },
     session: {
-        strategy: "jwt",
+        strategy: "jwt"
     },
     secret: process.env.NEXTAUTH_SECRET,
     providers: [
         CredentialsProvider({
             name: "Sign in",
             credentials: {
-                email: {
-                    label: "Email",
-                    type: "email",
-                    placeholder: "hello@example.com",
+                username: {
+                    label: "username",
+                    type: "text",
+                    placeholder: "username",
                 },
                 password: { label: "Password", type: "password" },
             },
             async authorize(credentials) {
-                if (!credentials?.email || !credentials.password) {
+                if (!credentials?.username || !credentials.password) {
                     return null;
                 }
 
                 const dbUser = await db.user.findUnique({
                     where: {
-                        email: credentials.email,
+                        username: credentials.username,
                     },
                 });
 
@@ -49,14 +49,14 @@ export const authOptions: NextAuthOptions = {
                 }
 
                 return {
-                    id: dbUser.id + "",
+                    id: `${dbUser.id}`,
                     email: dbUser.email,
                     emailVerified: dbUser.emailVerified,
                     password: dbUser.password,
                     username: dbUser.username,
                     bio: dbUser.bio,
-                    role: dbUser.role || "USER",
-                    pp: dbUser.pp || '/pp.svg',
+                    role: `${dbUser.role}`,
+                    pp: `${dbUser.pp}`,
                     banner: dbUser.banner,
                     createdAt: dbUser.createdAt,
                     updatedAt: dbUser.updatedAt
