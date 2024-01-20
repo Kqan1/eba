@@ -7,7 +7,7 @@ export default function RootFooter() {
     const thisYear = date.getFullYear();
 
     return (
-        <footer className="flex items-center px-6 py-4 mt-8">
+        <footer className="flex items-center px-6 py-4 mt-4">
             <div className="md:flex md:justify-around text-center mx-auto max-w-6xl md:space-x-4 space-y-2 md:space-y-0 text-sm leading-6 font-semibold text-zinc-800 dark:text-zinc-200 divide-x divide-gray-200/70 dark:divide-gray-800/60">
                 <div className="flex items-center justify-center pr-">
                     <p>&copy; EBA 2023 - {thisYear} Tüm Hakları Saklıdır - <Link href="https://kqan1.github.io">Kqan</Link> Tarafından Yapıldı</p>

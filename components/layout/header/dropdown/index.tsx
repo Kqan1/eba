@@ -53,7 +53,7 @@ export default function HeaderDropdown() {
 					<Profile session={session} status={status}/>
 				</DropdownMenuLabel>
 				<DropdownMenuSeparator />
-					<Link href="/myprofile"><DropdownMenuItem className="cursor-pointer">
+					<Link href={`/profile/${session?.user?.id}`}><DropdownMenuItem className="cursor-pointer">
 						<User className="mr-2 h-4 w-4" />
 						Profilim
 					</DropdownMenuItem></Link>

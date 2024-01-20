@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { barlow } from "@/utils/fonts";
 
-import Search from "@/components/layout/header/search";
+import Search from "@/components/utils/search";
 import HeaderDropdown from "@/components/layout/header/dropdown";
-import Notifications from "@/components/layout/header/notifications";
+import Notifications from "@/components/utils/notifications";
 import ThemeSwitcher from "@/components/utils/ThemeSwitcher";
 import { Separator } from "@/components/ui/separator"
 
@@ -25,7 +25,7 @@ export default function Header() {
 				if (window.scrollY <= currentPosition) {
 					setHeaderColor("bg-transparent");
 				} else if (window.scrollY >= currentPosition) {
-					setHeaderColor("bg-gray-200/40");
+					setHeaderColor("bg-gray-200/70");
 				}
 			}
 		};

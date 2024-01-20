@@ -28,11 +28,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="tr-TR" className="h-full light">
-            <body className={cn(inter.className, "relative text-gray-800 dark:text-gray-200 antialiased bg-white dark:bg-black h-full overflow-x-hidden")}>
+            <body className={cn(inter.className, "relative text-gray-800 dark:text-gray-200 antialiased bg-neutral-50 dark:bg-black overflow-x-hidden h-full")}>
                 <GlobalContextProvider>
-                    <main className="relative flex flex-col min-h-screen h-full">
+                    <main className="relative flex flex-col min-h-screen">
                         <Header />
-                        <div className="relative flex-grow flex-1">
+                        <div className="relative flex-grow flex-1 h-full">
                             {children}
                         </div>
                         <Footer />

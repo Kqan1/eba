@@ -25,7 +25,7 @@ export default function Notifications() {
 	useEffect(()=>{
         async function getInfo() {
             try {
-                const res = await fetch("/api/notifications", {
+                const res = await fetch("/api/profile/notifications", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -87,7 +87,7 @@ export default function Notifications() {
                             </>
                             )
                         : <div className="flex items-center justify-center h-5/6 w-full text-gray-600">
-                            <Spinner />
+                            <Spinner size={24} />
                         </div>
                 }
 			</DropdownMenuContent>

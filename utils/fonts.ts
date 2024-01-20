@@ -1,8 +1,15 @@
-import { Inter, Barlow } from "next/font/google";
+import { Inter, Barlow, Great_Vibes } from "next/font/google";
 
-export const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
-export const barlow = Barlow({
+const barlow = Barlow({
     weight: ['700'],
     subsets: ['latin'],
 });
+
+const great_vibes = Great_Vibes({
+    weight: ["400"],
+    subsets: ["latin-ext"]
+});
+
+export { inter, barlow, great_vibes };
