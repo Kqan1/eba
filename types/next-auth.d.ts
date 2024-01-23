@@ -11,6 +11,8 @@ declare module 'next-auth' {
             pp: string;
             banner: string;
             role: string;
+            xp: number;
+            level: number;
             createdAt: Date;
             updatedAt: Date;
         };
@@ -24,6 +26,8 @@ declare module 'next-auth' {
         pp: string;
         banner: string;
         role: string;
+        xp: number;
+        level: number;
         createdAt: Date;
         updatedAt: Date;
     };
@@ -37,6 +41,8 @@ declare module "next-auth/jwt" {
         bio: string;
         pp: string;
         banner: string;
+        xp: number;
+        level: number;
         role: string;
         createdAt: Date;
         updatedAt: Date;

@@ -37,6 +37,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         </div>
                         <Footer />
                     </main>
+                    <div className="fixed bottom-2 right-2 p-2 bg-gray-300 rounded">
+                        <p className="block md:hidden">sm</p>
+                        <p className="hidden md:max-lg:block">md</p>
+                        <p className="hidden lg:max-xl:block">lg</p>
+                        <p className="hidden xl:max-2xl:block">xl</p>
+                        <p className="hidden 2xl:block">2xl</p>
+                    </div>
                 </GlobalContextProvider>
             </body>
         </html>

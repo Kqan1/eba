@@ -19,16 +19,16 @@ type Props = {
 export default async function RootLayout({ children, params }: Props) {
     const session = await getServerSession(authOptions);
     let selectedId = params.getProfile;
-    const [ profile ] = await useProfile(selectedId);
+    const [profile] = await useProfile(selectedId);
 
-    if ( !profile ) return <ProfileError />;
+    if (!profile) return <ProfileError />;
 
     return (
-        <div className="max-w-8xl mx-auto flex flex-col items-center p-2 xs:p-4">
-            <div className="w-full h-44 md:h-60 mb-14 relative flex items-end">
+        <div className="max-w-8xl mx-auto flex flex-col items-center p-2 xs:p-4 sm:px-8">
+            <div className="w-full h-44 md:h-60 mb-14 relative flex max-md:justify-center items-end">
                 <Image
                     src={profile.banner}
-                    alt={profile.bannerAlt}
+                    alt={`${profile.banner}'nin Banner'i`}
                     fill
                     className="rounded md:rounded-lg -z-10 border border-gray-200 dark:border-gray-800"
                 />
@@ -42,7 +42,7 @@ export default async function RootLayout({ children, params }: Props) {
                     </Button>
                 </div>
                 }
-                <div className="absolute h-min max-sm:top-2 sm:bottom-2 right-2 space-x-2">
+                <div className="absolute h-min max-md:top-2 sm:bottom-2 right-2 space-x-2">
                     <SendComponent userId={profile.id} />
                     { session?.user?.id === selectedId && 
                     <Button variant="outline" className="space-x-2">
@@ -51,10 +51,10 @@ export default async function RootLayout({ children, params }: Props) {
                     </Button>
                     }
                 </div>
-                <div className="flex p-2 h-20 md:h-24 ml-6 md:ml-10 space-x-2 translate-y-1/2 rounded-xl bg-neutral-50 dark:bg-black border border-gray-200 dark:border-gray-800">
+                <div className="flex p-2 h-20 md:h-24 md:ml-10 space-x-2 translate-y-1/2 rounded-xl bg-neutral-50 dark:bg-black border border-gray-200 dark:border-gray-800">
                     <Image
                         src={profile.pp}
-                        alt={profile.ppAlt}
+                        alt={`${profile.pp}'nin Profil Fotoğrafı`}
                         height={80}
                         width={80}
                         className="rounded-md h-16 md:h-20 w-16 md:w-20"

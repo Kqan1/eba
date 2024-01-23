@@ -2,7 +2,6 @@
 import React, { createContext, useContext } from "react";
 import { ThemeProvider } from "next-themes";
 import { SessionProvider } from "next-auth/react";
-// import { NextUIProvider } from "@nextui-org/react";
 
 type DataType = {
 };
@@ -20,11 +19,9 @@ export function GlobalContextProvider ({ children }: { children: React.ReactNode
     return (
         <SessionProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-                {/* <NextUIProvider> */}
-                    <GlobalContext.Provider value={{  }}>
-                        { children }
-                    </GlobalContext.Provider>
-                {/* </NextUIProvider> */}
+                <GlobalContext.Provider value={{  }}>
+                    { children }
+                </GlobalContext.Provider>
             </ThemeProvider>
         </SessionProvider>
     );

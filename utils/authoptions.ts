@@ -58,6 +58,8 @@ export const authOptions: NextAuthOptions = {
                     role: `${dbUser.role}`,
                     pp: `${dbUser.pp}`,
                     banner: dbUser.banner,
+                    xp: dbUser.xp,
+                    level: dbUser.level,
                     createdAt: dbUser.createdAt,
                     updatedAt: dbUser.updatedAt
                 };
@@ -78,6 +80,8 @@ export const authOptions: NextAuthOptions = {
                     role: token.role,
                     pp: token.pp,
                     banner: token.banner,
+                    xp: token.xp,
+                    level: token.level,
                     createdAt: token.createdAt,
                     updatedAt: token.updatedAt
                 },
@@ -96,6 +100,8 @@ export const authOptions: NextAuthOptions = {
                     role: u.role,
                     pp: u.pp,
                     banner: u.banner,
+                    xp: u.xp,
+                    level: u.level,
                     createdAt: u.createdAt,
                     updatedAt: u.updatedAt
                 };
